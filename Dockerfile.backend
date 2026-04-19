@@ -1,6 +1,16 @@
 # Backend Dockerfile (build and runtime for .NET 10 app)
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
+
+# Install Node.js required by the JavaScript SDK targets referenced by the solution
+# (the Microsoft.VisualStudio.JavaScript.Sdk project needs `node` during dotnet publish)
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends curl ca-certificates gnupg \
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y --no-install-recommends nodejs \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY TaskManagerApp.Server/TaskManagerApp.Server.csproj TaskManagerApp.Server/
 RUN dotnet restore TaskManagerApp.Server/TaskManagerApp.Server.csproj
 COPY . .
