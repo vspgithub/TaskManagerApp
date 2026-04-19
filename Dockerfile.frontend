@@ -1,0 +1,16 @@
+# Frontend Dockerfile (build + serve static files with nginx)
+
+# Build stage
+FROM node:20 AS build
+WORKDIR /src/taskmanagerapp.client
+COPY taskmanagerapp.client/package*.json ./
+COPY taskmanagerapp.client/tsconfig*.json ./
+COPY taskmanagerapp.client/ ./
+RUN npm ci --silent
+RUN npm run build
+
+# Runtime stage - serve static files with nginx
+FROM nginx:stable-alpine AS runtime
+COPY --from=build /src/taskmanagerapp.client/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

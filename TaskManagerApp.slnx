@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="taskmanagerapp.client/taskmanagerapp.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="TaskManagerApp.Server/TaskManagerApp.Server.csproj" />
+  <Project Path="TaskManagerApp.Tests/TaskManagerApp.Tests.csproj" Id="5c055310-f137-4968-9cfc-2fa2b3ad6439" />
+</Solution>
