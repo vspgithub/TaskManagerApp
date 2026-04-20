@@ -3,6 +3,7 @@
 1. Frontend: React (TypeScript)
 2. Backend: .NET 10 Web API
 3. Containerisation: Docker
+   
 This project demonstrates clean architecture, validation, API integration, and testability.
 
 **What the application demonstrates**
