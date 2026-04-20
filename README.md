@@ -1,4 +1,4 @@
-# TaskManagerApp
+## TaskManagerApp
 **TaskManagerApp** is a simple full-stack Task Manager application built using:
 1. Frontend: React (TypeScript)
 2. Backend: .NET 10 Web API
@@ -30,18 +30,22 @@ This project demonstrates clean architecture, validation, API integration, and t
   - Commands assume you are in the repository root and have Docker installed.
 
 1) Build the backend image
-    - docker build -f Dockerfile.backend -t taskmanagerapp-backend:local .
+   
+    &rarr; docker build -f Dockerfile.backend -t taskmanagerapp-backend:local .
 
-2) Build the frontend image
-    - docker build -f Dockerfile.frontend -t taskmanagerapp-frontend:local .
+3) Build the frontend image
+   
+    &rarr; docker build -f Dockerfile.frontend -t taskmanagerapp-frontend:local .
 
-3) Run the backend container (maps container 80 → host 8080)
-    - docker run -d --name tm-backend -p 8080:80 taskmanagerapp-backend:local
+5) Run the backend container (maps container 80 → host 8080)
+   
+    &rarr; docker run -d --name tm-backend -p 8080:80 taskmanagerapp-backend:local
 
-4) Run the frontend container (maps container 80 → host 3000)
-    - docker run -d --name tm-frontend -p 3000:80 taskmanagerapp-frontend:local
+7) Run the frontend container (maps container 80 → host 3000)
+   
+    &rarr; docker run -d --name tm-frontend -p 3000:80 taskmanagerapp-frontend:local
 
-5) Open the UI and API
+9) Open the UI and API    
     - Frontend UI: **http://localhost:3000**
     - Backend API / Swagger: **http://localhost:8080/swagger**
 
@@ -92,7 +96,26 @@ This project demonstrates clean architecture, validation, API integration, and t
   - Provide a `docker-compose.yml` that wires frontend, backend and an optional reverse-proxy (nginx) together to simplify local testing.
   - Add helpful scripts in the root `README` for common flows (build, run, test, clean).
 
-**💡 Summary: This project demonstrates:**
+
+# Application Screenshots
+
+### Add Task Form
+![Add Task](./ScreenShots/TaskForm.jpg)
+
+### Task List
+![Task List](./ScreenShots/TaskList.jpg)
+
+### Validation Errors
+![TaskValidation](./ScreenShots/TaskValidation.jpg)
+
+### Task Manager Page
+![TaskManagerPage](./ScreenShots/TaskManagerPage.jpg)
+
+### Swagger APIs
+![Swagger API](./ScreenShots/TaskManagerSwagger.jpg)
+
+
+###💡** Summary: This project demonstrates:**
 
 1. Clean architecture and separation of concerns
 2. Proper validation (client + server)
