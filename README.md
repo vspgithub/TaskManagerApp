@@ -115,7 +115,7 @@ This project demonstrates clean architecture, validation, API integration, and t
 ![Swagger API](./ScreenShots/TaskManagerSwagger.jpg)
 
 
-###💡** Summary: This project demonstrates:**
+**💡Summary: This project demonstrates:**
 
 1. Clean architecture and separation of concerns
 2. Proper validation (client + server)
