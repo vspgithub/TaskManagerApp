@@ -114,6 +114,8 @@ This project demonstrates clean architecture, validation, API integration, and t
 ### Swagger APIs
 ![Swagger API](./ScreenShots/TaskManagerSwagger.jpg)
 
+### Loom Video Link
+https://www.loom.com/share/92e8bc9ac3474dc4abe58d3d06d4bb67
 
 **💡Summary: This project demonstrates:**
 
